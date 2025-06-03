@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#627254" />
+  <meta name="keywords" content="Belum tau, Mimin belum tau, Halaman utama, Belum tau utama, Belum tau my id" />
+  <meta property="og:title" content="Belum tau - Home" />
+  <meta property="og:description" content="Ga paham? Yuk sini mimin Belum tau." />
+  <meta property="og:image" content="./upload/image/preview-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Belum tau - Home" />
+  <meta name="twitter:description" content="Ga paham? Yuk sini mimin Belum tau." />
+  <meta name="twitter:image" content="./upload/image/preview-image.png" />
+  <meta name="twitter:url" content="./" />
+  <meta name="twitter:site" content="@KeztOfficial" />
+  <link rel="shortcut icon" href="./upload/image/main.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./script/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="./script/article.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="./script/index.css" type="text/css" media="all" />
+  <title>Belum tau - Ilmu pengetahuanmu disini</title>
+  <meta name="description" content="Fakta unik dan ilmu baru yang jarang diketahui banyak orang, disajikan dari sumber terpercaya untuk menambah wawasanmu." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387354103237394" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Belum tau - Ilmu pengetahuanmu disini",
+    "description": "Fakta unik dan ilmu baru yang jarang diketahui banyak orang, disajikan dari sumber terpercaya untuk menambah wawasanmu.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Belum tau",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "./upload/image/main.png"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <br /><br /><br /><br />
+
+  <section class="container-content-article" id="rekomendasiArtikel">
+    <!-- Artikel akan dimuat otomatis lewat JSON -->
+  </section>
+
+  <div id="footerWeb"></div>
+
+  <script>
+    fetch('./api/pages-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("rekomendasiArtikel");
+        if (!container) return;
+        
+        data.slice().reverse().forEach(item => {
+          const linkWrapper = document.createElement("a");
+          linkWrapper.href = item.link;
+          linkWrapper.style.textDecoration = "none";
+          linkWrapper.style.color = "inherit";
+        
+          const itemArticle = document.createElement("div");
+          itemArticle.className = "item-content";
+          itemArticle.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <h1>${item.title}</h1>
+            <h2>${item.hashtags}</h2>
+            <p>${item.date}</p>
+            <hr>
+          `;
+        
+          linkWrapper.appendChild(itemArticle);
+          container.appendChild(linkWrapper);
+        });
+      })
+      .catch(err => console.error("Gagal ambil data artikel:", err));
+  </script>
+
+  <script src="./script/main.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./script/script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+:root {
+  --olive-green: #627254;
+  --camouflage-green: #76885B;
+  --light-gray: #DDDDDD;
+  --very-light-gray: #fafafa;
+  --dark-grey: #1d1d1d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  clear: both;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Mobile Design */
+/* Bagian awal article atau intro */
+@media (max-width: 1024px) {
+  .article-intro {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .article-intro > article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 9vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 10;
+  }
+  
+  .article-intro > article > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .article-intro > article > nav > h1 {
+    font-weight: 400;
+    color: #d1d5db;
+    font-size: 3.2vh;
+  }
+  
+  .article-intro > article > nav > .icons {
+    display: flex;
+    color: white;
+    font-size: 4vh;
+    gap: 15px;
+  }
+  
+  .article-intro > article > nav > .icons > i {
+    transition: 0.5s all;
+  }
+  
+  .article-intro > article > h2 {
+    font-weight: 500;
+    color: white;
+    font-size: 3.8vh;
+    order: 2;
+  }
+  
+  .article-intro > .background {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(0.7) blur(8px);
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  .article-intro > .header-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 15px;
+    z-index: 15;
+  }
+  
+  .article-intro > .header-bottom > .hastag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    box-shadow: 3px 3px 6px #00000065;
+    border-radius: 15px;
+    overflow: scroll;
+    white-space: nowrap;
+    background: #ffffff80;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 2vh;
+  }
+  
+  .article-intro > .header-bottom > .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    box-shadow: 3px 3px 6px #00000065;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .article-intro > .header-bottom > .profile > .data-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+    background: #ffffff80;
+    padding: 10px;
+  }
+  
+  .article-intro > .header-bottom > .profile > .data-profile > img {
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+    float: left;
+  }
+  
+  .article-intro > .header-bottom > .profile > .data-profile > div {
+    margin-left: 15px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  
+  .article-intro > .header-bottom > .profile  > .data-profile > div > h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 3.5vh;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  .article-intro > .header-bottom > .profile  > .data-profile > div > p {
+    color: #dedede;
+    font-weight: 400;
+    font-size: 2vh;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  /* Isi artikel atau Bagian utama artikel */
+  .main-article {
+    padding: 15px;
+    background-color: #f4f4f4;
+  }
+  
+  .main-article > #sosialMediaOption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    border-radius: 3.2vh;
+    width: 60vw;
+    height: 8vh;
+  }
+  
+  .main-article > #sosialMediaOption > a {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .main-article > h1 {
+    color: #0b0b0b;
+    font-size: 28px;
+    text-align: left;
+    font-weight: 500;
+    margin: 1px;
+  }
+  
+  .main-article > h2 {
+    color: #0b0b0b;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 500;
+    margin: 1px;
+  }
+  
+  .main-article > p {
+    display: inline;
+    color: #202020;
+    font-size: 19px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > p > span,
+  .main-article > span {
+    color: var(--olive-green);
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  
+  .main-article > ul {
+    margin: 0;
+  }
+  
+  .main-article > ol {
+    margin: 0;
+  }
+  
+  .main-article > ol+ul > li {
+    color: #202020;
+    font-size: 19px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > a {
+    display: inline;
+    color: var(--camouflage-green);
+    font-size: 19px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  
+  .main-article > address {
+    display: block;
+    color: #4f4f4f;
+    font-size: 14px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > button {
+    border-radius: 15px;
+    background: var(--olive-green);
+    color: #fff;
+    padding: 8px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    margin-bottom: 10px;
+    transition: 1s all;
+  }
+  
+  footer {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop Style */
+@media (min-width: 1024px) {
+  .article-intro {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .article-intro > article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 9vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 10;
+  }
+  
+  .article-intro > article > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .article-intro > article > nav > h1 {
+    font-weight: 400;
+    color: #d1d5db;
+    font-size: 3.5vh;
+  }
+  
+  .article-intro > article > nav > .icons {
+    display: flex;
+    color: white;
+    font-size: 4vh;
+    gap: 15px;
+  }
+  
+  .article-intro > article > nav > .icons > i {
+    transition: 0.5s all;
+  }
+  
+  .article-intro > article > h2 {
+    font-weight: 500;
+    color: white;
+    font-size: 5vh;
+    order: 2;
+  }
+  
+  .article-intro > .background {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(0.7) blur(8px);
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  .article-intro > .header-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 15px;
+    z-index: 15;
+  }
+  
+  .article-intro > .header-bottom > .hastag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 27vw;
+    height: auto;
+    box-shadow: 3px 3px 6px #00000065;
+    border-radius: 15px;
+    overflow: scroll;
+    white-space: nowrap;
+    background: #ffffff80;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 2vh;
+  }
+  
+  .article-intro > .header-bottom > .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 35vw;
+    height: auto;
+    box-shadow: 3px 3px 6px #00000065;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .article-intro > .header-bottom > .profile > .data-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+    background: #ffffff80;
+    padding: 10px;
+  }
+  
+  .article-intro > .header-bottom > .profile > .data-profile > img {
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+    float: left;
+  }
+  
+  .article-intro > .header-bottom > .profile > .data-profile > div {
+    margin-left: 15px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  
+  .article-intro > .header-bottom > .profile  > .data-profile > div > h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 3.5vh;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  .article-intro > .header-bottom > .profile  > .data-profile > div > p {
+    color: #dedede;
+    font-weight: 400;
+    font-size: 2vh;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  /* Isi artikel atau Bagian utama artikel */
+  .main-article {
+    padding: 15px;
+    width: 40vw;
+    margin: auto;
+    background-color: #f4f4f4;
+  }
+  
+  .main-article > #sosialMediaOption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    border-radius: 3.2vh;
+    width: 8vw;
+    height: 3vh;
+  }
+  
+  .main-article > #sosialMediaOption > a {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .main-article > h1 {
+    color: #0b0b0b;
+    font-size: 28px;
+    text-align: left;
+    font-weight: 500;
+    margin: 1px;
+  }
+  
+  .main-article > h2 {
+    color: #0b0b0b;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 500;
+    margin: 1px;
+  }
+  
+  .main-article > p {
+    display: inline;
+    color: #202020;
+    font-size: 19px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > p > span,
+  .main-article > span {
+    color: var(--olive-green);
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  
+  .main-article > ul {
+    margin: 0;
+  }
+  
+  .main-article > ol {
+    margin: 0;
+  }
+  
+  .main-article > ol+ul > li {
+    color: #202020;
+    font-size: 19px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > a {
+    display: inline;
+    color: var(--camouflage-green);
+    font-size: 19px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  
+  .main-article > address {
+    display: block;
+    color: #4f4f4f;
+    font-size: 14px;
+    text-align: left;
+    margin: 1px;
+  }
+  
+  .main-article > button {
+    border-radius: 15px;
+    background: var(--olive-green);
+    color: #fff;
+    padding: 8px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    margin-bottom: 10px;
+    transition: 1s all;
+  }
+  
+  footer {
+    width: 100vw;
+    height: auto;
+  }
+  
+}
