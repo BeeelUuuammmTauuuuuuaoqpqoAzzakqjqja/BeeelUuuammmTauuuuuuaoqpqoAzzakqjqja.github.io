@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "title": "Rekomendasi 10 Hewan Peliharaan Yang Cocok Untukmu",
+    "image": "https://cdn.pixabay.com/photo/2020/03/31/19/20/dog-4988985_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/rekomendasi-10-hewan-peliharaan.html",
+    "hashtags": "#Hewan #HewanPeliharaan #HewanRumah #Rekomendasi",
+    "date": "12 April 2025, 12:30 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Coming Soon, Jelaskan!",
+    "image": "https://i.imgur.com/7PhG8vn.png",
+    "link": "https://jelaskan.my.id/berita/article.html",
+    "hashtags": "#ComingSoon #Jelaskan #Information #YukSiniMiminJelaskan",
+    "date": "12 April 2025, 14:45 WIB",
+    "type": "News",
+    "user": "11808910"
+  },
+  {
+    "title": "Fenomena Alam Paling Langka Di Dunia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Aurora_borealis_over_Eielson_Air_Force_Base%2C_Alaska.jpg/1200px-Aurora_borealis_over_Eielson_Air_Force_Base%2C_Alaska.jpg",
+    "link": "https://jelaskan.my.id/edukasi/fenomena-alam-paling-langka-di-dunia.html",
+    "hashtags": "#Fenomena #FenomenaAlam",
+    "date": "26 April 2025, 08:08 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Mengapa Kita Tidak Pernah Melihat Warna Baru",
+    "image": "https://cdn.pixabay.com/photo/2023/07/14/18/23/color-pencils-8127500_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/mengapa_kita_tidak_pernah_melihat_warna_baru.html",
+    "hashtags": "#Warna #WarnaBaru #Pengelihatan",
+    "date": "11 Mei 2025, 11:45 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Apakah dunia pekerjaan akan digantikan AI",
+    "image": "https://cdn.pixabay.com/photo/2023/11/29/22/07/digital-art-8420361_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/apakah_dunia_pekerjaan_akan_digantikan_ai.html",
+    "hashtags": "#Pekerjaan #AI #Edukasi #DuniaPekerjaan #DuniaDigital",
+    "date": "10 Mei 2025, 13:30 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Kenapa Huruf X Jarang Digunakan pada Penamaan",
+    "image": "https://cdn.pixabay.com/photo/2014/10/04/16/55/wooden-cubes-473703_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/kenapa_huruf_x_jarang_digunakan_pada_penamaan.html",
+    "hashtags": "#HurufX #Penjelaskan #YukSiniMiminJelaskan #Alphabet",
+    "date": "10 Mei 2025, 19:25 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Apa Jadinya Jika Kita Bisa Akses Memori Layaknya Komputer",
+    "image": "https://images.pexels.com/photos/1908066/pexels-photo-1908066.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "link": "https://jelaskan.my.id/edukasi/apa-jadinya-jika-kita-bisa-akses-memori-layaknya-komputer.html",
+    "hashtags": "#Memori #OtakManusia #MemoriOtak #Manusia #Komputer",
+    "date": "11 Mei 2025, 19:53 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Mengapa Saat Tidur Kita Merasa Waktu Itu Super Cepat",
+    "image": "https://cdn.pixabay.com/photo/2023/06/17/03/47/sleeping-8069136_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/edukasi/mengapa-saat-tidur-kita-merasa-waktu-itu-super-cepat.html",
+    "hashtags": "#Tidur #Waktu #WaktuTidur",
+    "date": "12 Mei 2025, 07:15 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Bintang Asli dengan yang Kita Lihat Berbeda",
+    "image": "https://cdn.pixabay.com/photo/2017/01/31/13/40/shooting-star-2024127_1280.png",
+    "link": "https://jelaskan.my.id/edukasi/bintang-asli-dengan-yang-kita-lihat-berbeda.html",
+    "hashtags": "#Bintang #RuangAngkasa #BintangAsli",
+    "date": "12 Mei 2025, 11:20 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Kenapa Hujan Bisa Bikin Kita Tenang dan Nostalgia?",
+    "image": "https://cdn.pixabay.com/photo/2016/11/22/21/39/dark-1850684_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/kenapa-hujan-bisa-bikin-kita-tenang-dan-nostalgia.html",
+    "hashtags": "#Hujan #NostalgiaHujan #AnehnyaHujan",
+    "date": "12 Mei 2025, 20:30 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Kenapa Ingatan Masa Kecil Bisa Menghilang dari Pikiran Kita?",
+    "image": "https://cdn.pixabay.com/photo/2016/06/30/20/39/horse-1489825_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/kenapa-ingatan-masa-kecil-bisa-menghilang-dari-pikiran-kita.html",
+    "hashtags": "#Memori #Ingatan #IngatanMasaKecil #Pikiran",
+    "date": "13 Mei 2025, 08:59 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Bagaimana Mimpi Bisa Terjadi?",
+    "image": "https://cdn.pixabay.com/photo/2018/11/14/13/05/mont-hwan-3815215_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/bagaimana-mimpi-bisa-terjadi.html",
+    "hashtags": "#Mimpi #ProsesTerjadinyaMimpi #Imajinasi",
+    "date": "14 Mei 2025, 14:12 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Kenapa Matahari Menyala, Sedangkan Planet Lain Nggak?",
+    "image": "https://cdn.pixabay.com/photo/2023/09/20/17/39/sun-8265287_1280.png",
+    "link": "https://jelaskan.my.id/edukasi/kenapa-matahari-menyala-sedangkan-planet-lain-nggak.html",
+    "hashtags": "#Matahari #TataSurya #FaktaSains #Bintang #Astronomi #IlmuPengetahuan #SainsSeru",
+    "date": "16 Mei 2025, 12:10 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Mengapa Einstein Disebut Ilmuwan Terpintar Dunia?",
+    "image": "https://jelaskan.my.id/image/alberteinstein.jpg",
+    "link": "https://jelaskan.my.id/edukasi/mengapa-einstein-disebut-ilmuwan-terpintar-dunia.html",
+    "hashtags": "#Einstein #IlmuwanTerpintar #Relativitas #FaktaSains #MotivasiIlmiah",
+    "date": "Sabtu, 17 Mei 2025 pukul 19.13 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Kenapa Kita Harus Belajar Matematika?",
+    "image": "https://images.pexels.com/photos/22690751/pexels-photo-22690751/free-photo-of-matematika-hitung-hitungan-sekolah-ilmu.jpeg?auto=compress&cs=tinysrgb&w=1",
+    "link": "https://jelaskan.my.id/edukasi/kenapa-kita-harus-belajar-matematika.html",
+    "hashtags": "#BelajarMatematika #MatematikaItuKeren #LogikaSehariHari #ManfaatMatematika #MatematikaUntukHidup",
+    "date": "Minggu, 18 Mei 2025 pukul 11.29 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Kenapa Manusia Punya Banyak Sekali Bahasa? Kenapa Nggak Satu Saja?",
+    "image": "https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "link": "https://jelaskan.my.id/edukasi/kenapa-manusia-punya-banyak-sekali-bahasa-kenapa-nggak-satu-saja.html",
+    "hashtags": "#BahasaDunia #KenapaAdaBanyakBahasa #BahasaSebagaiIdentitas #BahasaItuKekayaan",
+    "date": "Minggu, 18 Mei 2025 pukul 16.29 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Bagaimana Cara Roket Bisa Sampai ke Bulan?",
+    "image": "https://cdn.pixabay.com/photo/2012/11/28/10/34/rocket-launch-67643_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/bagaimana-cara-roket-bisa-sampai-ke-bulan.html",
+    "hashtags": "#TeknologiLuarAngkasa #RoketDanGravitasi #IlmuPengetahuanItuKeren",
+    "date": "Selasa, 20 Mei 2025 pukul 08.31 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "4,5 Miliar Tahun Fase Bumi",
+    "image": "https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "link": "https://jelaskan.my.id/edukasi/45-miliar-tahun-fase-bumi.html",
+    "hashtags": "#SejarahBumi #EvolusiBumi #PlanetBumi #Geologi #Bumi4MiliarTahun #FaseBumi",
+    "date": "Selasa, 20 Mei 2025 pukul 14.00 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Ini dia",
+    "image": "https://cdn.pixabay.com/photo/2014/06/21/08/43/rabbit-373691_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/ini-dia.html",
+    "hashtags": "Hello World",
+    "date": "Rabu, 4 Juni 2025 pukul 07.24 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Heweh",
+    "image": "https://cdn.pixabay.com/photo/2014/06/21/08/43/rabbit-373691_1280.jpg",
+    "link": "https://jelaskan.my.id/edukasi/heweh.html",
+    "hashtags": "Shbaa",
+    "date": "Rabu, 4 Juni 2025 pukul 07.32 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  }
+]
