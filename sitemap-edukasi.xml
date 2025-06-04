@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.belumtau.com/edukasi/mengapa-kita-tidak-pernah-melihat-warna-baru.html</loc>
-    <lastmod>2025-06-04T07:33:45+07:00</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-</urlset>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+      <url>
+        <loc>https://www.belumtau.com/edukasi/mengapa-kita-tidak-pernah-melihat-warna-baru.html</loc>
+        <lastmod>2025-06-04T12:50:51.914Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+      <url>
+        <loc>https://www.belumtau.com/edukasi/kenapa-huruf-x-jarang-digunakan-pada-penamaan.html</loc>
+        <lastmod>2025-06-04T12:50:51.914Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+      <url>
+        <loc>https://www.belumtau.com/edukasi/kenapa-kita-harus-belajar-matematika.html</loc>
+        <lastmod>2025-06-04T12:50:51.914Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    </urlset>
