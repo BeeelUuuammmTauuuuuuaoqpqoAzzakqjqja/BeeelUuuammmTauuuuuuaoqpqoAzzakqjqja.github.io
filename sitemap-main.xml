@@ -12,22 +12,29 @@
   <url>
     <loc>https://belumtau.com/tentang.html</loc>
     <lastmod>2025-06-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://belumtau.com/contact.html</loc>
     <lastmod>2025-05-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://belumtau.com/privacy-policy.html</loc>
     <lastmod>2025-05-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://belumtau.com/terms-of-service.html</loc>
+    <lastmod>2025-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
