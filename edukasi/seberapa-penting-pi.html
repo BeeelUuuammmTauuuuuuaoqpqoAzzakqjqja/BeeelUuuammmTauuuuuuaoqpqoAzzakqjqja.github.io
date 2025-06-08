@@ -90,5 +90,19 @@
   <script src="../script/script.js" type="text/javascript" charset="utf-8"></script>
   <script src="../script/main.js" type="text/javascript" charset="utf-8"></script>
   <script src="../script/article.js" type="text/javascript" charset="utf-8"></script>
+  
+  <!-- News Letter Google -->
+  <script async type="application/javascript"
+        src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+<script>
+  (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+    basicSubscriptions.init({
+      type: "NewsArticle",
+      isPartOfType: ["Product"],
+      isPartOfProductId: "CAowqaO8DA:openaccess",
+      clientOptions: { theme: "light", lang: "id" },
+    });
+  });
+</script>
 </body>
 </html>
