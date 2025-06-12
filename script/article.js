@@ -137,3 +137,4 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("beforeunload", function () {
   window.speechSynthesis.cancel();
 });
+
