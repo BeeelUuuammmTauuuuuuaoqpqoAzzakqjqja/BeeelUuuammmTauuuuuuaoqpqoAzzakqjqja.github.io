@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Error loading JSON:', error);
       h1UserName.textContent = 'Ups, Gagal memuat data';
     });
-});
   
   // TTS Sistem
   const tombol = document.getElementById("bacakanArtikel");
