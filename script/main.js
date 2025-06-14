@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   var script = document.createElement("script");
-  script.src = "./upload/script/article.js";
+  script.src = "https://larzai.github.io/api/kesis-message.js";
   script.type = "text/javascript";
   script.charset = "utf-8";
   script.defer = true;
