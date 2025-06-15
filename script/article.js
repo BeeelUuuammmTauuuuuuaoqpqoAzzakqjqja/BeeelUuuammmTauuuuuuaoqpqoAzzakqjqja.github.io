@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM content loaded article.js");
   
-  // Navigasi intro
-  const introNavigationOnPublic = document.createElement("nav");
+  // Bikin navigasi intro artikel
+  const introNavigationOnPublic = document.createElement("div");
   const introInformationTypeArticle = document.getElementById("introInformationTypeArticle").textContent;
-  introNavigationOnPublic.style = "order: 1;";
+  
+  introNavigationOnPublic.classList.add("intro-option"); // kasih class
+  introNavigationOnPublic.style.order = "1"; // urutin biar di depan
   introNavigationOnPublic.innerHTML = `
     <h1>${introInformationTypeArticle}</h1>
     <span class="icons">
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </span>
   `;
   
-  // Add Sosial Media Option
+  // Tambahin tombol sosial media di bawah intro
   const sosialMediaOptionAdd = document.getElementById("sosialMediaOption");
   sosialMediaOptionAdd.style = "order: 1;";
   sosialMediaOptionAdd.innerHTML = `
@@ -25,47 +27,44 @@ document.addEventListener("DOMContentLoaded", function () {
     <a href="https://tiktok.com/@kezt_official" style="background-image: url('https://belumtau.com/upload/image/tiktok.png')"></a>
   `;
   
-  // Load to Web
+  // Masukin elemen intro ke dalam artikel paling atas
   const mainIntroArticle = document.getElementById("articleIntro");
   mainIntroArticle.insertBefore(introNavigationOnPublic, mainIntroArticle.firstChild);
   
-  // Sistem sumber dari image
+  // Tambahin sumber di bawah gambar otomatis
   let mainArticle = document.getElementById('mainArticle');
   mainArticle.querySelectorAll("img").forEach(img => {
     const addressImages = document.createElement("address");
     const parsedUrl = new URL(img.src);
     const hostnameParts = parsedUrl.hostname.split('.');
     
+    // Ngakalin domain buat ditulis sebagai sumber
     let domain;
     if (hostnameParts.length >= 3 && ['co', 'ac', 'gov', 'or'].includes(hostnameParts[hostnameParts.length - 2])) {
       domain = hostnameParts.slice(-3).join('.');
     } else {
       domain = hostnameParts.slice(-2).join('.');
     }
-  
+
     addressImages.textContent = "Sumber: " + domain;
     img.insertAdjacentElement('afterend', addressImages);
   });
 
-  // Button Option Intro
+  // Ambil tombol-tombol buat interaksi
   let likeButtonIntroOn = document.getElementById("likeButton");
   let shareButtonIntroOn = document.getElementById("shareButton");
   let moreOptionButtonIntroOn = document.getElementById("moreOptionButton");
-  
-  // Like System
+
+  // Like: toggle warna merah putih gitu doang
   if (likeButtonIntroOn) {
     likeButtonIntroOn.addEventListener("click", function() {
-      if (likeButtonIntroOn.style.color === "red") {
-        likeButtonIntroOn.style.color = "white";
-      } else {
-        likeButtonIntroOn.style.color = "red";
-      }
+      likeButtonIntroOn.style.color = likeButtonIntroOn.style.color === "red" ? "white" : "red";
     });
   } else {
     sistem.message.log("Terjadi Kesalahan");
   }
-  
-  // Share System (hanya jika diperlukan)
+
+  // Share: pake fitur bawaan HP kalau ada
   if (shareButtonIntroOn) {
     shareButtonIntroOn.addEventListener("click", function() {
       console.log("Share button clicked");
@@ -83,12 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  
+
+  // Tombol titik tiga: belum jadi fiturnya
   moreOptionButtonIntroOn.addEventListener("click", function () {
     sistem.message.info("Fitur ini masih dalam pengembangan dan belum dapat digunakan. :(");
   });
-  
-  // Deteksi tag name Account
+
+  // Ganti nama user dari file JSON (biar lebih manusiawi)
   const pTagID = document.getElementById('userID');
   const h1UserName = document.getElementById('userName');
   const username = pTagID.textContent.replace('@', '').trim();
@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Error loading JSON:', error);
       h1UserName.textContent = 'Ups, Gagal memuat data';
     });
-  
-  // TTS Sistem
+
+  // TTS: Bacain artikel otomatis
   const tombol = document.getElementById("bacakanArtikel");
   const suara = new SpeechSynthesisUtterance();
   suara.lang = 'id-ID';
@@ -119,22 +119,23 @@ document.addEventListener("DOMContentLoaded", function () {
       let textArticle = document.getElementById("mainArticle").innerText;
       suara.text = textArticle;
       window.speechSynthesis.speak(suara);
-      tombol.className = "fi fi-rr-volume-slash";
+      tombol.className = "fi fi-rr-volume-slash"; // ubah ikon jadi mute
       membaca = true;
     } else {
       window.speechSynthesis.cancel();
-      tombol.className = "fi fi-rr-volume";
+      tombol.className = "fi fi-rr-volume"; // balik ke volume
       membaca = false;
     }
   });
 
+  // Reset tombol kalau udah selesai baca
   suara.onend = function () {
     tombol.className = "fi fi-rr-volume";
     membaca = false;
   };
 });
 
+// Kalau user mau keluar, matikan suara dulu
 window.addEventListener("beforeunload", function () {
   window.speechSynthesis.cancel();
 });
-
