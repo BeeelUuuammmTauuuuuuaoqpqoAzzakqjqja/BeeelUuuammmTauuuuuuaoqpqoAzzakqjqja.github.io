@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#627254" />
+  <meta name="keywords" content="Belum tau, Mimin belum tau, Halaman utama, Belum tau utama, Belum tau my id" />
+  <meta name="description" content="Fakta unik dan ilmu baru yang jarang diketahui banyak orang, disajikan dari sumber terpercaya untuk menambah wawasanmu." />
+
+  <meta property="og:title" content="Belum tau - Gali Ilmu–mu disini!" />
+  <meta property="og:description" content="Ga paham? Yuk sini mimin Belum tau." />
+  <meta property="og:image" content="https://belumtau.com/upload/image/preview-image.png" />
+  <meta property="og:url" content="https://belumtau.com" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Belum tau - Home" />
+  <meta name="twitter:description" content="Ga paham? Yuk sini mimin Belum tau." />
+  <meta name="twitter:image" content="https://belumtau.com/upload/image/preview-image.png" />
+  <meta name="twitter:url" content="https://belumtau.com" />
+  <meta name="twitter:site" content="@KeztOfficial" />
+
+  <link rel="shortcut icon" href="https://belumtau.com/upload/image/main.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./script/style.css" />
+  <link rel="stylesheet" href="./script/article.css" />
+  <link rel="stylesheet" href="./script/index.css" />
+  <title>Belum tau - Ilmu pengetahuanmu disini</title>
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Belum tau - Ilmu pengetahuanmu disini",
+    "description": "Fakta unik dan ilmu baru yang jarang diketahui banyak orang, disajikan dari sumber terpercaya untuk menambah wawasanmu.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Belum tau",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://belumtau.com/upload/image/main.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite + Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Belum tau",
+    "url": "https://belumtau.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://belumtau.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Google Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387354103237394" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <br /><br /><br /><br />
+  <section class="container-content-article" id="rekomendasiArtikel">
+    <!-- Artikel akan dimuat otomatis lewat JSON -->
+  </section>
+  <button id="loadMore">Tampilkan lainnya</button>
+  
+  <div id="footerWeb"></div>
+
+  <script>
+    fetch('./api/pages-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("rekomendasiArtikel");
+        const button = document.getElementById("loadMore");
+        
+        if (!container || !button) return;
+        
+        // Data diacak
+        const acakData = data.slice().sort(() => Math.random() - 0.5);
+        
+        // Variabel kontrol
+        let index = 0;
+        const tampilPerKlik = 3;
+        
+        // Render sebagian
+        function tampilkanBerikutnya() {
+          const bagian = acakData.slice(index, index + tampilPerKlik);
+          bagian.forEach(item => {
+            const linkWrapper = document.createElement("a");
+            linkWrapper.href = item.link;
+            linkWrapper.style.textDecoration = "none";
+            linkWrapper.style.color = "inherit";  
+            const itemArticle = document.createElement("div");
+            itemArticle.className = "item-content";
+            itemArticle.innerHTML = `
+              <img src="${item.image}" alt="${item.title}">
+              <h1>${item.title}</h1>
+              <h2>${item.hashtags}</h2>
+              <p>${item.date}</p>
+              <hr>
+            `;
+            
+            linkWrapper.appendChild(itemArticle);
+            container.appendChild(linkWrapper);
+          });
+          
+          index += tampilPerKlik;
+          
+          // Sembunyikan tombol jika semua data sudah ditampilkan
+          if (index >= acakData.length) {
+            button.textContent = 'Artikel telah habis.';
+          }
+        }
+        
+        // Tampilkan pertama kali
+        tampilkanBerikutnya();
+        
+        // Event tombol
+        button.addEventListener('click', tampilkanBerikutnya);
+      })
+      .catch(err => console.error("Gagal ambil data artikel:", err));
+  </script>
+
+  <script src="./script/main.js"></script>
+</body>
+</html>
