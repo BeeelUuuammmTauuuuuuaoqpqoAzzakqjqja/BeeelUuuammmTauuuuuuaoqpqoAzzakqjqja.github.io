@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, p {
   header {
     position: fixed;
     width: 100vw;
-    height: 8vh;
+    height: 70px;
     background-color: white;
     display: flex;
     align-items: center;
