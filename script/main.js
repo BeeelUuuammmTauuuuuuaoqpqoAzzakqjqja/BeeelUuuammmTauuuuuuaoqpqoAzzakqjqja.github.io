@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <li><a href="https://belumtau.com/contact.html"><i class="bi bi-telephone"></i> Kontak</a></li>
     <li><a href="https://belumtau.com/tentang.html"><i class="bi bi-person-vcard"></i> Tentang Kami</a></li>
     <li><a href="https://belumtau.com/privacy-policy.html"><i class="bi bi-shield-check"></i> Kebijakan Privasi</a></li>
+    <li><a href="https://belumtau.com/terms-of-service.html">Syarat & Ketentuan</a></li>
+    <li><a href="https://belumtau.com/disclaimer.html">Sanggahan</a></li>
   `;
 
   const mainNavigationOnPublic = document.createElement("header");
@@ -65,9 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="contentakhiran">
           <p>Support</p>
-          <a href="https://belumtau.com/contact.html">Kontak</a>
+          <a href="https://belumtau.com/contact.html">Hubungi Kami</a>
           <a href="https://belumtau.com/tentang.html">Tentang Kami</a>
           <a href="https://belumtau.com/privacy-policy.html">Kebijakan Privasi</a>
+          <a href="https://belumtau.com/terms-of-service.html">Syarat & Ketentuan</a>
+          <a href="https://belumtau.com/disclaimer.html">Sanggahan</a>
           <a href="https://saweria.co/silarzai">Suport Kami</a>
         </div>
       </div>
