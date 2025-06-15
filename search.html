@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#627254" />
+  <meta name="keywords" content="Belum tau, pencarian fakta unik, cari ilmu, search belum tau, info menarik, fakta baru" />
+  <meta name="description" content="Hasil pencarian Belum tau. Temukan informasi menarik, fakta unik, dan ilmu baru yang jarang diketahui orang lain." />
+
+  <meta property="og:title" content="Belum tau - Hasil Pencarian" />
+  <meta property="og:description" content="Cari tahu lebih banyak bersama mimin Belum tau. Hasil pencarian dari sumber terpercaya." />
+  <meta property="og:image" content="https://belumtau.com/upload/image/preview-image.png" />
+  <meta property="og:url" content="https://belumtau.com/search" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Belum tau - Hasil Pencarian" />
+  <meta name="twitter:description" content="Cari tahu lebih banyak bersama mimin Belum tau. Hasil pencarian dari sumber terpercaya." />
+  <meta name="twitter:image" content="https://belumtau.com/upload/image/preview-image.png" />
+  <meta name="twitter:url" content="https://belumtau.com/search" />
+  <meta name="twitter:site" content="@KeztOfficial" />
+
+  <link rel="shortcut icon" href="https://belumtau.com/upload/image/main.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./script/style.css" />
+  <link rel="stylesheet" href="./script/article.css" />
+  <link rel="stylesheet" href="./script/index.css" />
+  <title>Belum tau - Hasil Pencarian</title>
+</head>
+<body>
+  <section class="container-search">
+    <div>
+      <input type="text" id="search" placeholder="Cari artikel...">
+      <button id="buttonReset"><i class="fi fi-rr-cross"></i></button>
+      <button id="buttonSearch"><i class="fi fi-rr-search"></i></button>
+    </div>
+    <h3 id="informationResultSearch">Artikel Terbaru Kami</h3>
+  </section>
+  
+  <section class="container-content-article" id="result" style="padding: 20px;"></section>
+  <button id="loadMore">Tampilkan lainnya.</button>
+  
+  <script>
+    fetch('./api/pages-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const params = new URLSearchParams(window.location.search);
+        const keyword = params.get("q")?.toLowerCase() || "";
+        const searchBox = document.getElementById("search");
+        const container = document.getElementById("result");
+        const loadMoreBtn = document.getElementById("loadMore");
+        const infoText = document.getElementById("informationResultSearch");
+    
+        searchBox.value = keyword;
+    
+        function getScore(keyword, item) {
+          const title = item.title.toLowerCase();
+          if (title === keyword) return 100;
+          if (title.startsWith(keyword)) return 80;
+          if (title.includes(keyword)) return 50;
+          return 0;
+        }
+    
+        let hasil = keyword
+          ? data
+              .map(item => ({ ...item, score: getScore(keyword, item) }))
+              .filter(item => item.score > 0)
+              .sort((a, b) => b.score - a.score)
+          : data.slice().reverse(); // default urutan terbaru
+    
+        let index = 0;
+        const tampilPerKlik = 3;
+    
+        function tampilkanBerikutnya() {
+          const bagian = hasil.slice(index, index + tampilPerKlik);
+    
+          bagian.forEach(item => {
+            const linkWrapper = document.createElement("a");
+            linkWrapper.href = item.link;
+            linkWrapper.style.textDecoration = "none";
+            linkWrapper.style.color = "inherit";
+    
+            const itemArticle = document.createElement("div");
+            itemArticle.className = "item-content";
+            itemArticle.innerHTML = `
+              <img src="${item.image}" alt="${item.title}">
+              <h1>${item.title}</h1>
+              <h2>${item.hashtags}</h2>
+              <p>${item.date}</p>
+              <hr>
+            `;
+    
+            linkWrapper.appendChild(itemArticle);
+            container.appendChild(linkWrapper);
+          });
+    
+          index += tampilPerKlik;
+    
+          if (index >= hasil.length) {
+            loadMoreBtn.textContent = 'Artikel telah habis.';
+            loadMoreBtn.disabled = true;
+          }
+        }
+    
+        if (hasil.length === 0) {
+          container.innerHTML = "<p>Tidak ditemukan hasil.</p>";
+          infoText.textContent = "Tidak ditemukan!";
+          loadMoreBtn.style.display = "none";
+        } else {
+          infoText.textContent = keyword ? "Hasil pencarian ditemukan!" : "Artikel Terbaru Kami";
+          tampilkanBerikutnya();
+          loadMoreBtn.addEventListener("click", tampilkanBerikutnya);
+        }
+    
+        searchBox.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            const q = searchBox.value.trim();
+            if (q) {
+              window.location.href = "?q=" + encodeURIComponent(q);
+            }
+          }
+        });
+    
+        document.getElementById("buttonReset").addEventListener("click", function () {
+          searchBox.value = "";
+          searchBox.focus();
+        });
+    
+        document.getElementById("buttonSearch").addEventListener("click", function () {
+          const q = searchBox.value.trim();
+          if (q) {
+            window.location.href = "?q=" + encodeURIComponent(q);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Gagal ambil data artikel:", err);
+        document.getElementById("result").innerHTML = "<p>Gagal memuat data.</p>";
+      });
+  </script>
+  <footer id="footerWeb">
+    <!-- Footer di isi sendiri -->
+  </footer>
+  <script src="./script/main.js"></script>
+</body>
+</html>
