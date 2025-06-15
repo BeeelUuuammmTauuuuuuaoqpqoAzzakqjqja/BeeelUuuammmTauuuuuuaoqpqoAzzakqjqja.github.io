@@ -147,13 +147,13 @@ h1, h2, h3, h4, h5, h6, p {
   }
   
   .akhiran > .contentakhiran-container > .contentakhiran {
-    width: 35%;
+    width: 100%;
     display: block;
   }
   
   .akhiran > .contentakhiran-container > .contentakhiran > p {
-    font-weight: 400;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 25px;
     color: var(--very-light-gray);
     text-align: left;
   }
@@ -163,9 +163,10 @@ h1, h2, h3, h4, h5, h6, p {
     color: #f0f0f0;
     font-weight: 400;
     display: block;
-    font-size: 18px;
+    font-size: 22px;
     text-align: left;
-    margin-left: 10px;
+    border-bottom: 2px solid var(--very-light-gray);
+    margin: 15px 20px;
   }
   
 }
@@ -286,7 +287,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
   
   .akhiran > .contentakhiran-container > .contentakhiran > p {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 24px;
     color: var(--very-light-gray);
     text-align: left;
@@ -299,6 +300,8 @@ h1, h2, h3, h4, h5, h6, p {
     display: block;
     font-size: 18px;
     text-align: left;
+    border-bottom: 2px solid var(--very-light-gray);
+    margin: 15px 20px;
     margin-left: 10px;
   }
   
