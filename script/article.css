@@ -46,26 +46,26 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 10;
   }
   
-  .article-intro > article > nav {
+  .article-intro > article > .intro-option {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .article-intro > article > nav > h1 {
+  .article-intro > article > .intro-option > h1 {
     font-weight: 400;
     color: #d1d5db;
     font-size: 3.2vh;
   }
   
-  .article-intro > article > nav > .icons {
+  .article-intro > article > .intro-option > .icons {
     display: flex;
     color: white;
     font-size: 4vh;
     gap: 15px;
   }
   
-  .article-intro > article > nav > .icons > i {
+  .article-intro > article > .intro-option > .icons > i {
     transition: 0.5s all;
   }
   
@@ -285,19 +285,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Desktop Style */
 @media (min-width: 1024px) {
   .article-intro {
@@ -312,32 +299,32 @@ h1, h2, h3, h4, h5, h6, p {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 9vh;
+    padding-top: 70px;
     padding-left: 15px;
     padding-right: 15px;
     z-index: 10;
   }
   
-  .article-intro > article > nav {
+  .article-intro > article > .intro-option {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .article-intro > article > nav > h1 {
+  .article-intro > article > .intro-option > h1 {
     font-weight: 400;
     color: #d1d5db;
     font-size: 3.5vh;
   }
   
-  .article-intro > article > nav > .icons {
+  .article-intro > article > .intro-option > .icons {
     display: flex;
     color: white;
     font-size: 4vh;
     gap: 15px;
   }
   
-  .article-intro > article > nav > .icons > i {
+  .article-intro > article > .intro-option > .icons > i {
     transition: 0.5s all;
   }
   
@@ -551,4 +538,4 @@ h1, h2, h3, h4, h5, h6, p {
     height: auto;
   }
   
-}
+    }
