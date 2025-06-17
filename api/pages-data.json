@@ -124,5 +124,23 @@
     "date": "Senin, 16 Juni 2025 pukul 13.38 WIB",
     "type": "Edukasi",
     "user": "11808910"
+  },
+  {
+    "title": "Arus Searah (DC)",
+    "image": "https://belumtau.com/upload/image/arus-searah-dc.png",
+    "link": "https://www.belumtau.com/edukasi/arus-searah-dc.html",
+    "hashtags": "#ArusSearah #ListrikDC #ThomasEdison #BelajarListrik #TeknologiModern #EdukasiSantai #FaktaSains",
+    "date": "Selasa, 17 Juni 2025 pukul 16.28 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
+  },
+  {
+    "title": "Arus Bolak-Balik (AC)",
+    "image": "https://belumtau.com/upload/image/arus-bolak-balik-ac.png",
+    "link": "https://www.belumtau.com/edukasi/arus-bolak-balik-ac.html",
+    "hashtags": "#ArusBolakBalik #NikolaTesla #ACvsDC #ListrikRumah #FaktaFIsika #BelajarSantai #EdukasiModern",
+    "date": "Selasa, 17 Juni 2025 pukul 17.07 WIB",
+    "type": "Edukasi",
+    "user": "11808910"
   }
 ]
