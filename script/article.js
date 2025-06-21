@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
       <i class="fi fi-ss-heart" id="likeButton"></i>
       <i class="fi fi-ss-share" id="shareButton"></i>
       <i class="fi fi-rr-volume" id="bacakanArtikel"></i>
-      <i class="fi fi-rs-circle-ellipsis-vertical" id="moreOptionButton"></i>
     </span>
   `;
   
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ambil tombol-tombol buat interaksi
   let likeButtonIntroOn = document.getElementById("likeButton");
   let shareButtonIntroOn = document.getElementById("shareButton");
-  let moreOptionButtonIntroOn = document.getElementById("moreOptionButton");
 
   // Like: toggle warna merah putih gitu doang
   if (likeButtonIntroOn) {
@@ -82,11 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  // Tombol titik tiga: belum jadi fiturnya
-  moreOptionButtonIntroOn.addEventListener("click", function () {
-    sistem.message.info("Fitur ini masih dalam pengembangan dan belum dapat digunakan. :(");
-  });
 
   // Ganti nama user dari file JSON (biar lebih manusiawi)
   const pTagID = document.getElementById('userID');
