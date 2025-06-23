@@ -54,7 +54,7 @@
         searchBox.value = keyword;
     
         function getScore(keyword, item) {
-          const title = item.title.toLowerCase();
+          const title = item.hashtags.toLowerCase();
           if (title === keyword) return 100;
           if (title.startsWith(keyword)) return 80;
           if (title.includes(keyword)) return 50;
