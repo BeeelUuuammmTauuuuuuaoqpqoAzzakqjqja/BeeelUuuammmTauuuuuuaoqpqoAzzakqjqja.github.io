@@ -52,15 +52,19 @@
         const infoText = document.getElementById("informationResultSearch");
     
         searchBox.value = keyword;
-    
+        
         function getScore(keyword, item) {
-          const title = item.hashtags.toLowerCase();
-          if (title === keyword) return 100;
-          if (title.startsWith(keyword)) return 80;
-          if (title.includes(keyword)) return 50;
+          const hashtag = item.hashtags.toLowerCase();
+          const title = item.title.toLowerCase();
+          keyword = keyword.toLowerCase();
+          
+          if (hashtag === keyword || title === keyword) return 100;
+          if (hashtag.startsWith(keyword) || title.startsWith(keyword)) return 80;
+          if (hashtag.includes(keyword) || title.includes(keyword)) return 50;
+          
           return 0;
         }
-    
+        
         let hasil = keyword
           ? data
               .map(item => ({ ...item, score: getScore(keyword, item) }))
