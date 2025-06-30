@@ -32,17 +32,23 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 50;
   }
   
-  header > img {
+  header > a {
     width: auto;
     height: 50%;
     margin-left: 10px;
   }
   
-  header > i {
-    font-size: 3rem;
-    margin-top: 2vh;
+  header > a > img {
+    width: auto;
+    height: 100%;
+  }
+  
+  header > #buttonOpenSidebar {
+    font-size: 3.5rem;
     margin-right: 10px;
     color: #252525;
+    background: none;
+    border: none;
   }
   
   aside {
@@ -60,6 +66,16 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 50;
     overflow: hidden;
     transition: 1s all;
+  }
+  
+  aside > button {
+    font-size: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #252525;
+    border-radius: 13px;
+    width: 90%;
+    padding: 10px;
+    border: none;
   }
   
   aside > ul {
@@ -199,11 +215,16 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 50;
   }
   
-  nav > img {    
+  nav > a {    
     width: auto;
     height: 50%;
     margin: 0;
-  }      
+  }
+  
+  nav > a > img {    
+    width: auto;
+    height: 100%;
+  }
   
   nav > ul {
     list-style: none;
