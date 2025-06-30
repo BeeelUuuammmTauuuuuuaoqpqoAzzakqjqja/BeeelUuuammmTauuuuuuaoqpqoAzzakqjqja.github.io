@@ -67,6 +67,24 @@
 
   <br /><br /><br /><br />
   <section class="container-content-article" id="rekomendasiArtikel">
+    <!-- Rekomendasi (Mungkin Anda Suka) -->
+    <div class="wrapper-article" id="wrapperArticle">
+      <!-- Isi wrapper article -->
+      <a href="https://belumtau.com/edukasi/seberapa-penting-pi">
+        <div class="item-content">
+          <img src="https://cdn.pixabay.com/photo/2016/06/13/07/59/pi-1453836_1280.jpg" alt="Seberapa Penting Pi (π)" />
+          <div class="text-content">
+            <h1>Seberapa Penting Pi (π)</h1>
+            <p>Artikel Populer <i style="color: rgb(248,176,67);" class="bi bi-fire"></i></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="option-type-article">
+      <a class="a-active" href="https://belumtau.com/">Rekomendasi</a>
+      <a href="https://belumtau.com/terbaru">Terbaru</a>
+      <a href="https://belumtau.com/terlama">Terlama</a>
+    </div>
     <!-- Artikel akan dimuat otomatis lewat JSON -->
   </section>
   <button id="loadMore">Tampilkan lainnya</button>
@@ -96,19 +114,25 @@
             const linkWrapper = document.createElement("a");
             linkWrapper.href = item.link;
             linkWrapper.style.textDecoration = "none";
-            linkWrapper.style.color = "inherit";  
+            linkWrapper.style.color = "inherit";
+        
             const itemArticle = document.createElement("div");
             itemArticle.className = "item-content";
             itemArticle.innerHTML = `
-              <img src="${item.image}" alt="${item.title}">
-              <h1>${item.title}</h1>
-              <h2>${item.hashtags}</h2>
-              <p>${item.date}</p>
-              <hr>
+              <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
+              <div class="text-content">
+                <h1>${item.title}</h1>
+                <h2>${item.hashtags}</h2>
+                <p>${item.date}</p>
+              </div>
             `;
-            
+        
             linkWrapper.appendChild(itemArticle);
             container.appendChild(linkWrapper);
+        
+            const itemHr = document.createElement("hr");
+            itemHr.className = "article-divider";
+            container.appendChild(itemHr);
           });
           
           index += tampilPerKlik;
