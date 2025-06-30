@@ -14,7 +14,6 @@ body {
   padding: 0;
   background-color: white;
   clear: both;
-  box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
 
@@ -75,7 +74,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
   
   .option-type-article > a {
@@ -86,6 +88,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     text-decoration: none;
+    scroll-snap-align: start;
   }
   
   .option-type-article > .a-active {
@@ -402,4 +405,4 @@ body {
     cursor: pointer;
   }
 
-}
+    }
