@@ -85,17 +85,21 @@
             linkWrapper.style.color = "inherit";
     
             const itemArticle = document.createElement("div");
-            itemArticle.className = "item-content";
-            itemArticle.innerHTML = `
-              <img src="${item.image}" alt="${item.title}">
-              <h1>${item.title}</h1>
-              <h2>${item.hashtags}</h2>
-              <p>${item.date}</p>
-              <hr>
+            itemArticle.className = "item-content";itemArticle.innerHTML = `
+              <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
+              <div class="text-content">
+                <h1>${item.title}</h1>
+                <h2>${item.hashtags}</h2>
+                <p>${item.date}</p>
+              </div>
             `;
-    
+        
             linkWrapper.appendChild(itemArticle);
             container.appendChild(linkWrapper);
+        
+            const itemHr = document.createElement("hr");
+            itemHr.className = "article-divider";
+            container.appendChild(itemHr);
           });
     
           index += tampilPerKlik;
