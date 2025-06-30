@@ -3,38 +3,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const navigationOption = `
     <li><a href="https://belumtau.com/"><i class="bi bi-house"></i> Home</a></li>
-    <li><a href="https://belumtau.com/search.html"><i class="bi bi-search"></i> Search</a></li>
-    <li><a href="https://belumtau.com/contact.html"><i class="bi bi-telephone"></i> Kontak</a></li>
-    <li><a href="https://belumtau.com/tentang.html"><i class="bi bi-person-vcard"></i> Tentang Kami</a></li>
-    <li><a href="https://belumtau.com/privacy-policy.html"><i class="bi bi-shield-check"></i> Kebijakan Privasi</a></li>
-    <li><a href="https://belumtau.com/terms-of-service.html">Syarat & Ketentuan</a></li>
-    <li><a href="https://belumtau.com/disclaimer.html">Sanggahan</a></li>
+    <li><a href="https://belumtau.com/search"><i class="bi bi-search"></i> Search</a></li>
+    <li><a href="https://belumtau.com/contact"><i class="bi bi-telephone"></i> Kontak</a></li>
+    <li><a href="https://belumtau.com/tentang"><i class="bi bi-person-vcard"></i> Tentang Kami</a></li>
+    <li><a href="https://belumtau.com/privacy-policy"><i class="bi bi-shield-check"></i> Kebijakan Privasi</a></li>
+    <li><a href="https://belumtau.com/terms-of-service">Syarat & Ketentuan</a></li>
+    <li><a href="https://belumtau.com/disclaimer">Sanggahan</a></li>
   `;
 
   const mainNavigationOnPublic = document.createElement("header");
   mainNavigationOnPublic.innerHTML = `
-    <img src="https://i.imgur.com/r5zeJgB.png" alt="Belum Tau Logo" id="navigationImage" />
-    <i class="fi fi-br-bars-staggered" id="buttonOpenSidebar"></i>
+    <a href="https://belumtau.com/"><img src="https://i.imgur.com/r5zeJgB.png" alt="Belum Tau Logo" id="navigationImage" width="150" height="50"/></a>
+    <button id="buttonOpenSidebar" aria-label="Buka Sidebar">
+      <i class="bi bi-list"></i>
+    </button>
   `;
 
   const sidebarNavigationContainer = document.createElement("aside");
   sidebarNavigationContainer.innerHTML = `
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 25px; width: 100%; font-size: 35px; color: #252525;">
-      <i style="margin-left: 25px;" class="fi fi-br-cross" id="buttonCloseSidebar"></i>
-      <i style="margin-right: 25px;" class="fi fi-rr-octagon-exclamation"></i>
-    </div>
-    <ul>
-      ${navigationOption}
-    </ul>
+    <button id="buttonCloseSidebar"><i class="bi bi-x"></i></button>
+    <ul>${navigationOption}</ul>
     <a href="https://saweria.co/silarzai">Suport kami</a>
   `;
 
   const navigationDesktop = document.createElement("nav");
   navigationDesktop.innerHTML = `
-    <img src="https://i.imgur.com/r5zeJgB.png" alt="belum tau Logo" id="navigationImage" />
-    <ul>
-      ${navigationOption}
-    </ul>
+    <a href="https://belumtau.com/"><img src="https://i.imgur.com/r5zeJgB.png" alt="Belum Tau Logo" id="navigationImage" width="150" height="50"/></a>
+    <ul>${navigationOption}</ul>
   `;
 
   document.body.insertBefore(sidebarNavigationContainer, document.body.firstChild);
@@ -67,33 +62,26 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="contentakhiran">
           <p>Support</p>
-          <a href="https://belumtau.com/contact.html">Hubungi Kami</a>
-          <a href="https://belumtau.com/tentang.html">Tentang Kami</a>
-          <a href="https://belumtau.com/privacy-policy.html">Kebijakan Privasi</a>
-          <a href="https://belumtau.com/terms-of-service.html">Syarat & Ketentuan</a>
-          <a href="https://belumtau.com/disclaimer.html">Sanggahan</a>
+          <a href="https://belumtau.com/contact">Hubungi Kami</a>
+          <a href="https://belumtau.com/tentang">Tentang Kami</a>
+          <a href="https://belumtau.com/privacy-policy">Kebijakan Privasi</a>
+          <a href="https://belumtau.com/terms-of-service">Syarat & Ketentuan</a>
+          <a href="https://belumtau.com/disclaimer">Sanggahan</a>
           <a href="https://saweria.co/silarzai">Suport Kami</a>
         </div>
       </div>
       <section class="sosialmedia">
-        <a href="httpz://tiktok.com/@kezt_official"><i class="fi fi-brands-tik-tok"></i></a>
-        <a href="https://x.com/KeztOfficial?t=4d9COf5KwFw_TvDmi6qlZQ&s=09"><i class="fi fi-brands-twitter-alt"></i></a>
-        <a href="https://whatsapp.com/channel/0029VbAdoqVFXUuZTfOWLX2U"><i class="fi fi-brands-whatsapp"></i></a>
-        <a href="https://www.instagram.com/kezt_official"><i class="fi fi-brands-instagram"></i></a>
+        <a href="https://tiktok.com/@kezt_official"><i class="bi bi-tiktok"></i></a>
+        <a href="https://x.com/KeztOfficial"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://whatsapp.com/channel/0029VbAdoqVFXUuZTfOWLX2U"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/kezt_official"><i class="bi bi-instagram"></i></a>
       </section>
-      <p>&copy 2025 Belum Tau</p>
+      <p>&copy; 2025 Belum Tau</p>
     </section>
   `;
 
   const moduleSuportArticle = [
     "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css",
-    "https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css",
     "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
   ];
   moduleSuportArticle.forEach(href => {
@@ -103,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(link);
   });
 
-  var script = document.createElement("script");
+  const script = document.createElement("script");
   script.src = "https://larzai.github.io/api/kesis-message.js";
   script.type = "text/javascript";
   script.charset = "utf-8";
