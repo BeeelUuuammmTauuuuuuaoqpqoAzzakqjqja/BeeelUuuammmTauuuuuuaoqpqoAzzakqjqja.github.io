@@ -32,6 +32,72 @@ body {
     cursor: pointer;
   }
   
+  .wrapper-article {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .wrapper-article > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+  }
+  
+  .wrapper-article > a > .item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(245,245,245);
+  }
+  
+  .item-content > img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  
+  .item-content > .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .option-type-article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .option-type-article > a {
+    border-radius: 15px;
+    background: var(--light-gray);
+    color: rgb(50,50,50);
+    padding: 8px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .option-type-article > .a-active {
+    border-radius: 15px;
+    background: var(--olive-green);
+    color: #fff;
+    padding: 8px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
   .container-content-article {
     display: flex;
     flex-direction: column;
@@ -54,33 +120,56 @@ body {
   }
   
   .container-content-article > a > .item-content {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
     overflow: hidden;
   }
   
   .container-content-article > a > .item-content > img {
-    width: 100%;
-    height: 265px;
+    width: 150px;
+    aspect-ratio: 1.1 / 1;
     object-fit: cover;
-    object-position: center;
     border-radius: 10px;
+    flex-shrink: 0;
   }
   
-  .container-content-article > a > .item-content > h1 {
-    color: rgb(26,26,26);
+  .article-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    margin: 16px 0;
+    display: block;
+  }
+  
+  .container-content-article > a > .item-content > .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .text-content h1 {
+    color: #1a1a1a;
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(18px, 2vw, 20px);
+    margin: 0 0 4px 0;
   }
   
-  .container-content-article > a > .item-content > h2 {
-    color: rgb(12,12,12);
+  .text-content h2 {
+    color: #0c0c0c;
     font-weight: 400;
-    font-size: 15px;
+    font-size: clamp(14px, 1.5vw, 15px);
+    margin: 0 0 4px 0;
   }
   
-  .container-content-article > a > .item-content > p {
-    color: rgb(100,100,100);
+  .text-content p {
+    color: #646464;
     font-weight: 400;
-    font-size: 10px;
+    font-size: clamp(10px, 1vw, 12px);
+    margin: 0;
   }
   
   .container-search {
