@@ -1,134 +1,148 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM content loaded article.js");
-  
-  // Bikin navigasi intro artikel
+
   const introNavigationOnPublic = document.createElement("div");
   const introInformationTypeArticle = document.getElementById("introInformationTypeArticle").textContent;
-  
-  introNavigationOnPublic.classList.add("intro-option"); // kasih class
-  introNavigationOnPublic.style.order = "1"; // urutin biar di depan
+
+  introNavigationOnPublic.classList.add("intro-option");
+  introNavigationOnPublic.style.order = "1";
   introNavigationOnPublic.innerHTML = `
     <h1>${introInformationTypeArticle}</h1>
     <span class="icons">
-      <i class="fi fi-ss-heart" id="likeButton"></i>
-      <i class="fi fi-ss-share" id="shareButton"></i>
-      <i class="fi fi-rr-volume" id="bacakanArtikel"></i>
+      <i class="bi bi-heart-fill" id="likeButton"></i>
+      <i class="bi bi-share-fill" id="shareButton"></i>
+      <i class="bi bi-volume-up-fill" id="bacakanArtikel"></i>
     </span>
   `;
-  
-  // Tambahin tombol sosial media di bawah intro
+
   const sosialMediaOptionAdd = document.getElementById("sosialMediaOption");
-  sosialMediaOptionAdd.style = "order: 1;";
+  sosialMediaOptionAdd.style.order = "1";
   sosialMediaOptionAdd.innerHTML = `
     <a href="https://whatsapp.com/channel/0029VbAdoqVFXUuZTfOWLX2U" style="background-image: url('https://belumtau.com/upload/image/whatsapp.jpeg')"></a>
     <a href="https://x.com/KeztOfficial?t=4d9COf5KwFw_TvDmi6qlZQ&s=09" style="background-image: url('https://belumtau.com/upload/image/x.png')"></a>
     <a href="https://www.instagram.com/kezt_official" style="background-image: url('https://belumtau.com/upload/image/instagram.jpeg')"></a>
     <a href="https://tiktok.com/@kezt_official" style="background-image: url('https://belumtau.com/upload/image/tiktok.png')"></a>
   `;
-  
-  // Masukin elemen intro ke dalam artikel paling atas
+
   const mainIntroArticle = document.getElementById("articleIntro");
   mainIntroArticle.insertBefore(introNavigationOnPublic, mainIntroArticle.firstChild);
-  
-  // Tambahin sumber di bawah gambar otomatis
-  let mainArticle = document.getElementById('mainArticle');
+
+  const mainArticle = document.getElementById('mainArticle');
   mainArticle.querySelectorAll("img").forEach(img => {
     const addressImages = document.createElement("address");
     const parsedUrl = new URL(img.src);
     const hostnameParts = parsedUrl.hostname.split('.');
-    
-    // Ngakalin domain buat ditulis sebagai sumber
-    let domain;
-    if (hostnameParts.length >= 3 && ['co', 'ac', 'gov', 'or'].includes(hostnameParts[hostnameParts.length - 2])) {
-      domain = hostnameParts.slice(-3).join('.');
-    } else {
-      domain = hostnameParts.slice(-2).join('.');
-    }
-
+    const domain = (hostnameParts.length >= 3 && ['co', 'ac', 'gov', 'or'].includes(hostnameParts.at(-2)))
+      ? hostnameParts.slice(-3).join('.')
+      : hostnameParts.slice(-2).join('.');
     addressImages.textContent = "Sumber: " + domain;
     img.insertAdjacentElement('afterend', addressImages);
   });
 
-  // Ambil tombol-tombol buat interaksi
-  let likeButtonIntroOn = document.getElementById("likeButton");
-  let shareButtonIntroOn = document.getElementById("shareButton");
+  const likeButtonIntroOn = document.getElementById("likeButton");
+  const shareButtonIntroOn = document.getElementById("shareButton");
 
-  // Like: toggle warna merah putih gitu doang
   if (likeButtonIntroOn) {
-    likeButtonIntroOn.addEventListener("click", function() {
+    likeButtonIntroOn.addEventListener("click", () => {
       likeButtonIntroOn.style.color = likeButtonIntroOn.style.color === "red" ? "white" : "red";
     });
-  } else {
-    sistem.message.log("Terjadi Kesalahan");
   }
 
-  // Share: pake fitur bawaan HP kalau ada
   if (shareButtonIntroOn) {
-    shareButtonIntroOn.addEventListener("click", function() {
-      console.log("Share button clicked");
+    shareButtonIntroOn.addEventListener("click", () => {
+      const judulArticle = document.getElementById('titleArticle')?.textContent || document.title;
+      const shareUrl = window.location.href;
       if (navigator.share) {
-        var judulArticle = document.getElementById('titleArticle').textContent;
-        var shareUrl = window.location.href;
         navigator.share({
           title: document.title,
-          text: 'Ayo kita baca Artikel: ' + judulArticle + "\n" + "Link: ",
+          text: `Ayo kita baca Artikel: ${judulArticle}`,
           url: shareUrl
-        })
-        .catch((error) => sistem.message.log('Gagal berbagi', error));
+        }).catch(err => console.warn('Gagal berbagi:', err));
       } else {
-        sistem.message.log('Browser tidak mendukung fitur berbagi');
+        alert('Browser tidak mendukung fitur berbagi');
       }
     });
   }
 
-  // Ganti nama user dari file JSON (biar lebih manusiawi)
   const pTagID = document.getElementById('userID');
   const h1UserName = document.getElementById('userName');
-  const username = pTagID.textContent.replace('@', '').trim();
+  const username = pTagID?.textContent.replace('@', '').trim();
 
-  fetch('https://belumtau.com/api/account-data.json')
-    .then(response => response.json())
+  if (username) {
+    fetch('https://belumtau.com/api/account-data.json')
+      .then(response => response.ok ? response.json() : Promise.reject("Gagal mengambil data"))
+      .then(data => {
+        h1UserName.textContent = data[username]?.username || 'Username tidak ditemukan';
+      })
+      .catch(error => {
+        console.error('Gagal memuat data:', error);
+        h1UserName.textContent = 'Ups, Gagal memuat data';
+      });
+  }
+  
+  fetch('https://belumtau.com/api/pages-data.json')
+    .then(res => res.json())
     .then(data => {
-      if (data[username]) {
-        h1UserName.textContent = data[username].username;
-      } else {
-        h1UserName.textContent = 'Username tidak ditemukan';
-      }
+      const container = document.getElementById("rekomendasiArtikel");
+      if (!container) return;
+  
+      // Acak dan ambil 10 data
+      const acakData = data.slice().sort(() => Math.random() - 0.5).slice(0, 10);
+  
+      // Tampilkan artikel
+      acakData.forEach(item => {
+        const linkWrapper = document.createElement("a");
+        linkWrapper.href = item.link;
+        linkWrapper.style.textDecoration = "none";
+        linkWrapper.style.color = "inherit";
+  
+        const itemArticle = document.createElement("div");
+        itemArticle.className = "item-content";
+        itemArticle.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
+          <div class="text-content">
+            <h1>${item.title}</h1>
+            <h2>${item.hashtags}</h2>
+            <p>${item.date}</p>
+          </div>
+        `;
+  
+        linkWrapper.appendChild(itemArticle);
+        container.appendChild(linkWrapper);
+  
+        const itemHr = document.createElement("hr");
+        itemHr.className = "article-divider";
+        container.appendChild(itemHr);
+      });
     })
-    .catch(error => {
-      console.error('Error loading JSON:', error);
-      h1UserName.textContent = 'Ups, Gagal memuat data';
-    });
+    .catch(err => console.error("Gagal ambil data artikel:", err));
 
-  // TTS: Bacain artikel otomatis
   const tombol = document.getElementById("bacakanArtikel");
   const suara = new SpeechSynthesisUtterance();
   suara.lang = 'id-ID';
-
   let membaca = false;
 
-  tombol.addEventListener("click", function () {
+  tombol?.addEventListener("click", () => {
     if (!membaca) {
-      let textArticle = document.getElementById("mainArticle").innerText;
-      suara.text = textArticle;
+      suara.text = document.getElementById("mainArticle").textContent;
       window.speechSynthesis.speak(suara);
-      tombol.className = "fi fi-rr-volume-slash"; // ubah ikon jadi mute
+      tombol.className = "bi bi-volume-mute-fill";
       membaca = true;
     } else {
       window.speechSynthesis.cancel();
-      tombol.className = "fi fi-rr-volume"; // balik ke volume
+      tombol.className = "bi bi-volume-up-fill";
       membaca = false;
     }
   });
 
-  // Reset tombol kalau udah selesai baca
-  suara.onend = function () {
-    tombol.className = "fi fi-rr-volume";
+  suara.onend = () => {
+    tombol.className = "bi bi-volume-up-fill";
     membaca = false;
   };
+  
+  
 });
 
-// Kalau user mau keluar, matikan suara dulu
-window.addEventListener("beforeunload", function () {
+window.addEventListener("beforeunload", () => {
   window.speechSynthesis.cancel();
 });
