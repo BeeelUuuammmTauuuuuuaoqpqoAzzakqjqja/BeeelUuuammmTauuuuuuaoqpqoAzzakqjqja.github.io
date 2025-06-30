@@ -272,6 +272,88 @@ h1, h2, h3, h4, h5, h6, p {
     transition: 1s all;
   }
   
+  .container-content-article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;    width: 90%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: auto;
+  }
+  
+  .container-content-article > h1 {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: clamp(25px, 3vw, 28px);
+    margin: 5px;
+    align-self: flex-start;
+  }
+  
+  .container-content-article > a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+  }
+  
+  .container-content-article > a > .item-content {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  
+  .container-content-article > a > .item-content > img {
+    width: 150px;
+    aspect-ratio: 1.1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  
+  .article-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    margin: 16px 0;
+    display: block;
+  }
+  
+  .container-content-article > a > .item-content > .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .text-content h1 {
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 20px);
+    margin: 0 0 4px 0;
+  }
+  
+  .text-content h2 {
+    color: #0c0c0c;
+    font-weight: 400;
+    font-size: clamp(14px, 1.5vw, 15px);
+    margin: 0 0 4px 0;
+  }
+  
+  .text-content p {
+    color: #646464;
+    font-weight: 400;
+    font-size: clamp(10px, 1vw, 12px);
+    margin: 0;
+  }
+  
   footer {
     width: 100vw;
     height: auto;
@@ -287,6 +369,25 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Desktop Style */
 @media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .main-article,
+  .container-content-article {
+    display: inline-block;
+    width: 35vw;
+  }
+  
+  .article-intro,
+  footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
   .article-intro {
     position: relative;
     width: 100vw;
@@ -429,7 +530,7 @@ h1, h2, h3, h4, h5, h6, p {
   /* Isi artikel atau Bagian utama artikel */
   .main-article {
     padding: 15px;
-    width: 40vw;
+    width: 35vw;
     margin: auto;
     background-color: #f4f4f4;
   }
@@ -531,6 +632,89 @@ h1, h2, h3, h4, h5, h6, p {
     border: none;
     margin-bottom: 10px;
     transition: 1s all;
+  }
+  
+  .container-content-article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 35vw;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: auto;
+  }
+  
+  .container-content-article > h1 {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: clamp(25px, 3vw, 28px);
+    margin: 5px;
+    align-self: flex-start;
+  }
+  
+  .container-content-article > a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+  }
+  
+  .container-content-article > a > .item-content {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  
+  .container-content-article > a > .item-content > img {
+    width: 150px;
+    aspect-ratio: 1.1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  
+  .article-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    margin: 16px 0;
+    display: block;
+  }
+  
+  .container-content-article > a > .item-content > .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .text-content h1 {
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 20px);
+    margin: 0 0 4px 0;
+  }
+  
+  .text-content h2 {
+    color: #0c0c0c;
+    font-weight: 400;
+    font-size: clamp(14px, 1.5vw, 15px);
+    margin: 0 0 4px 0;
+  }
+  
+  .text-content p {
+    color: #646464;
+    font-weight: 400;
+    font-size: clamp(10px, 1vw, 12px);
+    margin: 0;
   }
   
   footer {
