@@ -236,6 +236,7 @@ body {
     padding: 10px 28px;
     border-radius: 25px;
     border: none;
+    box-sizing: border-box;
     cursor: pointer;
   }
   
@@ -405,4 +406,4 @@ body {
     cursor: pointer;
   }
 
-    }
+  }
