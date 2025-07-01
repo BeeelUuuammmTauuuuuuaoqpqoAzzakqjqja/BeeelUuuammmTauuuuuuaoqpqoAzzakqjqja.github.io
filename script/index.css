@@ -342,19 +342,19 @@ body {
     border-radius: 10px;
   }
   
-  .container-content-article > a > .item-content > h1 {
+  .text-content > h1 {
     color: rgb(26,26,26);
     font-weight: 500;
     font-size: 20px;
   }
   
-  .container-content-article > a > .item-content > h2 {
+  .text-content > h2 {
     color: rgb(12,12,12);
     font-weight: 400;
     font-size: 15px;
   }
   
-  .container-content-article > a > .item-content > p {
+  .text-content > p {
     color: rgb(100,100,100);
     font-weight: 400;
     font-size: 10px;
@@ -406,4 +406,4 @@ body {
     cursor: pointer;
   }
 
-}
+    }
