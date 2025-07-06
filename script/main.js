@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const mainNavigationOnPublic = document.createElement("header");
   mainNavigationOnPublic.innerHTML = `
-    <a href="https://belumtau.com/"><img src="https://i.imgur.com/r5zeJgB.png" alt="Belum Tau Logo" id="navigationImage" width="150" height="50"/></a>
+    <a href="https://belumtau.com/"><img src="https://belumtau.com/script/belum-tau.png" alt="Belum Tau Logo" id="navigationImage" width="150" height="50"/></a>
     <button id="buttonOpenSidebar" aria-label="Buka Sidebar">
       <i class="bi bi-list"></i>
     </button>
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const navigationDesktop = document.createElement("nav");
   navigationDesktop.innerHTML = `
-    <a href="https://belumtau.com/"><img src="https://i.imgur.com/r5zeJgB.png" alt="Belum Tau Logo" id="navigationImage" width="150" height="50"/></a>
+    <a href="https://belumtau.com/"><img src="https://belumtau.com/script/belum-tau.png" alt="Belum Tau Logo" id="navigationImage" width="150" height="50"/></a>
     <ul>${navigationOption}</ul>
   `;
 
