@@ -24,21 +24,51 @@
   <link rel="shortcut icon" href="https://belumtau.com/upload/image/main.png" type="image/x-icon" />
   <link rel="stylesheet" href="./script/style.css" />
   <link rel="stylesheet" href="./script/index.css" />
-  <title>Belum tau - Ilmu pengetahuanmu disini</title>
+  <title>Belum Tau | Situs Edukasi Bahasa Indonesia</title>
   
   <!-- JSON-LD: WebSite + Search -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "Organization",
     "name": "Belum Tau",
     "url": "https://belumtau.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://belumtau.com/cari?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "description": "Belum Tau adalah sumber informasi edukatif dan menarik tentang teknologi, sains, dan kehidupan."
+    "logo": "https://belumtau.com/upload/image/main.png",
+    "sameAs": [
+      "https://www.facebook.com/belumtau"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://belumtau.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terbaru",
+        "item": "https://belumtau.com/terbaru"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Terlama",
+        "item": "https://belumtau.com/terlama"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Hasil Pencarian",
+        "item": "https://belumtau.com/search?q={search_term_string}"
+      }
+    ]
   }
   </script>
   
@@ -46,7 +76,19 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387354103237394" crossorigin="anonymous"></script>
 </head>
 <body>
-
+  
+  <h1 style="
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  ">
+    Belum Tau - Situs atau Media Edukasi Indonesia Tentang Teknologi, Sains, atau Hal-Hal yang Mungkin Belum Kamu Tau
+  </h1>
+  
   <br /><br /><br /><br />
   <section class="container-content-article" id="rekomendasiArtikel">
     <!-- Rekomendasi (Mungkin Anda Suka) -->
@@ -133,7 +175,7 @@
       })
       .catch(err => console.error("Gagal ambil data artikel:", err));
   </script>
-
+  
   <script src="./script/main.js"></script>
 </body>
 </html>
