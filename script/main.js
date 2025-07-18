@@ -52,32 +52,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const footerWebsite = document.getElementById("footerWeb");
+  footerWebsite.className = "akhiran";
   footerWebsite.innerHTML = `
-    <section class="akhiran">
-      <p>belum tau adalah sumber informasi yang mencakup berbagai aspek kehidupan, mulai dari berita terbaru, edukasi, hingga informasi menarik lainnya.</p>
-      <div class="contentakhiran-container">
-        <div class="contentakhiran">
-          <p>Credits</p>
-          <a href="https://larzai.github.io">Larzai</a>
-        </div>
-        <div class="contentakhiran">
-          <p>Support</p>
-          <a href="https://belumtau.com/contact">Hubungi Kami</a>
-          <a href="https://belumtau.com/tentang">Tentang Kami</a>
-          <a href="https://belumtau.com/privacy-policy">Kebijakan Privasi</a>
-          <a href="https://belumtau.com/terms-of-service">Syarat & Ketentuan</a>
-          <a href="https://belumtau.com/disclaimer">Sanggahan</a>
-          <a href="https://saweria.co/silarzai">Suport Kami</a>
-        </div>
+    <p>Belum Tau adalah sebuah platform edukasi bahasa Indonesia yang dibuat untuk memberikan penjelasan singkat, jelas, dan mudah dipahami mengenai berbagai topik sehari-hari.</p>
+    <div class="contentakhiran-container">
+      <div class="contentakhiran">
+        <p>Credits</p>
+        <a href="https://larzai.github.io">Larzai</a>
       </div>
-      <section class="sosialmedia">
-        <a href="https://tiktok.com/@kezt_official"><i class="bi bi-tiktok"></i></a>
-        <a href="https://x.com/KeztOfficial"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://whatsapp.com/channel/0029VbAdoqVFXUuZTfOWLX2U"><i class="bi bi-whatsapp"></i></a>
-        <a href="https://www.instagram.com/kezt_official"><i class="bi bi-instagram"></i></a>
-      </section>
-      <p>&copy; 2025 Belum Tau</p>
-    </section>
+      <div class="contentakhiran">
+        <p>Support</p>
+        <a href="https://belumtau.com/contact">Hubungi Kami</a>
+        <a href="https://belumtau.com/tentang">Tentang Kami</a>
+        <a href="https://belumtau.com/privacy-policy">Kebijakan Privasi</a>
+        <a href="https://belumtau.com/terms-of-service">Syarat & Ketentuan</a>
+        <a href="https://belumtau.com/disclaimer">Sanggahan</a>
+        <a href="https://saweria.co/silarzai">Suport Kami</a>
+      </div>
+    </div>
+    <nav class="sosialmedia">
+      <a href="https://tiktok.com/@kezt_official"><i class="bi bi-tiktok"></i></a>
+      <a href="https://x.com/KeztOfficial"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://whatsapp.com/channel/0029VbAdoqVFXUuZTfOWLX2U"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://www.instagram.com/kezt_official"><i class="bi bi-instagram"></i></a>
+    </nav>
+    <p>&copy; 2025 Belum Tau - Media Edukasi Indonesia</p>
   `;
 
   const moduleSuportArticle = [
